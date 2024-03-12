@@ -1,22 +1,15 @@
 public class Solution {
     public int RemoveElement(int[] nums, int val) {
-    int counter = 0;
-    List<int> withoutVal = new List<int>();
+    int j = 0;
 
-    for(int i = 0; i < nums.Length; i++)
+    for(int i = 0; i< nums.Length; i++)
     {
         if (nums[i] != val)
         {
-            withoutVal.Add(nums[i]);
-            counter++;
+            nums[j] = nums[i]; 
+            j++;
         }
     }
-
-    for(int i = 0; i<withoutVal.Count; i++)
-    {
-        nums[i] = withoutVal[i];
-    }
-
-    return counter;
-    }
+    return j;
+}
 }
